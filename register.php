@@ -1,69 +1,108 @@
 <?php
-if(!empty($_GET)) {
-	$fullname = $email = $password = "";
+require_once ('dbhelper.php');
 
-	if(isset($_GET['fullname'])) {
-		$fullname = $_GET['fullname'];
+$s_fullname = $s_password = $s_email = $s_number = $s_address = '';
+
+if (!empty($_POST)) {
+	$s_id = '';
+
+	if (isset($_POST['fullname'])) {
+		$s_fullname = $_POST['fullname'];
 	}
 
-	if(isset($_GET['email'])) {
-		$email = $_GET['email'];
+	if (isset($_POST['email'])) {
+		$s_email = $_POST['email'];
 	}
 
-	if(isset($_GET['pwd'])) {
-		$password = $_GET['pwd'];
+	if (isset($_POST['password'])) {
+		$s_password = $_POST['password'];
 	}
 
-	echo "$fullname : $email : $password";
+	if (isset($_POST['number'])) {
+		$s_number = $_POST['number'];
+	}
 
+	if (isset($_POST['address'])) {
+		$s_address = $_POST['address'];
+	}
+
+	
+
+	$s_fullname = str_replace('\'', '\\\'', $s_fullname);
+	$s_password      = str_replace('\'', '\\\'', $s_password);
+	$s_email = str_replace('\'', '\\\'', $s_email);
+	$s_number = str_replace('\'', '\\\'', $s_number);
+	$s_address  = str_replace('\'', '\\\'', $s_address);
+	
+
+	
+	$sql = "insert into user(fullname, email, password, number, address) value ('$s_fullname', '$s_email', '$s_password' , '$s_number' '$s_address')";
+	
+
+	// echo $sql;
+
+	execute($sql);
+
+	header('Location: index.php');
 	die();
 }
+
+
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Register Form</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-	<link rel="stylesheet" href="php/process_form.php">
+	<title>Tạo tài khoản</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
-	<style type="text/css">
-		.form-group {
-			margin-bottom: 20px;
-		}
-	</style>
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div class="container">
-	<div class="card">
-		<div class="card-header bg-info text-white">
-			Register Form
-		</div>
-		<div class="card-body">
-			<form method="get">
-				<div class="form-group">
-					<label>Full Name: </label>
-					<input required type="text" name="fullname" class="form-control">
-				</div>
-				<div class="form-group">
-					<label>Email: </label>
-					<input required type="email" name="email" class="form-control">
-				</div>
-				<div class="form-group">
-					<label>Password: </label>
-					<input required type="password" name="pwd" class="form-control">
-				</div>
-				<div class="form-group">
-					<button class="btn btn-info text-white" type="submit">Register</button>
-					<a href="index.php"><button class="btn btn-warning" type="button">Reset</button></a>
-				</div>
-			</form>
+	<div class="container">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h2 class="text-center"> Form đăng ký </h2>
+			</div>
+			<div class="panel-body">
+				<form method="post">
+
+					<div class="form-group">
+					  <label for="fullname">Tên đăng nhập:</label>
+					  <input required="true" type="text" class="form-control" id="fullname" name="fullname" >
+					</div>
+
+					<div class="form-group">
+						<label for="email">Email:</label>
+						<input type="email" class="form-control" name="email" id="email" >
+					</div>
+
+					<div class="form-group">
+					  <label for="password">Mật khẩu:</label>
+					  <input type="password" class="form-control" name="password" id="password">
+					</div>
+
+					<div class="form-group">
+					  <label for="number">Số điện thoại:</label>
+					  <input type="number" class="form-control" id="number" name="number" >
+					</div>
+					
+					<div class="form-group">
+					  <label for="address">Địa chỉ:</label>
+					  <input type="text" class="form-control" id="address" name="address">
+					</div>
+					<button class="btn btn-success">Đăng ký</button>
+				</form>
+			</div>
 		</div>
 	</div>
-</div>
 </body>
 </html>

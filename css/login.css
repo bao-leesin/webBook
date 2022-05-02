@@ -26,6 +26,7 @@ body{
     margin-bottom: 20px;
     display: flex;
 }
+
 .form-group i{
     font-size: large;
     padding-right: 10px;
@@ -50,11 +51,14 @@ body{
     padding: 6px 10px;
     transition: 0.25s ease-in-out;
     margin-top: 20px;
-    cursor: pointer
+    cursor: pointer;
+   
 
 }
 .form-submit:hover{
     border: 1px solid yellow ;
 }
-
-
+.form-but{
+    margin: auto;
+    display: block;
+}
