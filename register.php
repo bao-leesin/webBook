@@ -36,7 +36,7 @@ if (!empty($_POST)) {
 	
 
 	
-	$sql = "insert into user(fullname, email, password, number, address) value ('$s_fullname', '$s_email', '$s_password' , '$s_number' '$s_address')";
+	$sql = "insert into user (fullname, email, password, number, address) value ('$s_fullname', '$s_email', '$s_password' , '$s_number' ,'$s_address');";
 	
 
 	// echo $sql;
@@ -100,6 +100,7 @@ if (!empty($_POST)) {
 					  <input type="text" class="form-control" id="address" name="address">
 					</div>
 					<button class="btn btn-success">Đăng ký</button>
+					<a href="index.php"> <button class="btn btn-danger" type="button"> Back </button> </a>
 				</form>
 			</div>
 		</div>

@@ -54,10 +54,11 @@ if (!empty($_GET)) {
                 </div>
             </div>
             <a href="home.php"><input type="submit" value="Đăng nhập" class="form-submit"></a>
-            <div class="form-but">
+         
+
 			<a href="register.php"><button class="btn btn-warning" type="button">Đăng ký</button></a>
-            <a href="changepwd.php"><button class="btn btn-danger" type="button">Đổi mật khẩu</button></a>
-			</div>
+            <a href="forgotpwd.php"><button class="btn btn-danger" type="button">Đổi mật khẩu</button></a>
+		
         </form>
         
     </div>
