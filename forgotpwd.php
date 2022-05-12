@@ -14,7 +14,7 @@ else{
 echo $token =  substr( md5(rand(0,999)),0,5) ;
 echo "<br/>";
 
-$sql = "UPDATE user SET token = '".$token."' WHERE email = '".$email."' ;";
+$sql = "UPDATE user SET token = '".$token."' WHERE email = '".$email."' ";
 execute($sql);
 
 $kq= guiMail($email,$token);
