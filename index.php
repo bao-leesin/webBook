@@ -57,7 +57,7 @@ if (!empty($_GET)) {
          
 
 			<a href="register.php"><button class="btn btn-warning" type="button">Đăng ký</button></a>
-            <a href="forgotpwd.php"><button class="btn btn-danger" type="button">Đổi mật khẩu</button></a>
+            <a href="forgotpwd.php"><button class="btn btn-danger" type="button">Quên mật khẩu?</button></a>
 		
         </form>
         
