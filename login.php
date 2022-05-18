@@ -62,6 +62,12 @@ if (!empty($_GET)) {
         <a href="forgotpwd.php"><button class="btn btn-danger" type="button">Quên mật khẩu?</button></a>
         </div>
 
+<<<<<<< HEAD:login.php
+=======
+			<a href="register.php"><button class="btn btn-warning" type="button">Đăng ký</button></a>
+            <a href="forgotpwd.php"><button class="btn btn-danger" type="button">Quên mật khẩu?</button></a>
+		
+>>>>>>> 69345612062983d58c9c15cf63067227568f0e96:index.php
         </form>
      
     </div>
