@@ -1,7 +1,7 @@
 <?php
 require_once ('dbhelper.php');
 
-$s_fullname = $s_password = $s_email = $s_number = $s_address = '';
+$s_fullname = $s_password = $s_email = $s_phone = $s_address = '';
 
 if (!empty($_POST)) {
 	$s_id = '';
@@ -19,7 +19,7 @@ if (!empty($_POST)) {
 	}
 
 	if (isset($_POST['number'])) {
-		$s_number = $_POST['number'];
+		$s_phone = $_POST['number'];
 	}
 
 	if (isset($_POST['address'])) {
@@ -31,19 +31,18 @@ if (!empty($_POST)) {
 	$s_fullname = str_replace('\'', '\\\'', $s_fullname);
 	$s_password      = str_replace('\'', '\\\'', $s_password);
 	$s_email = str_replace('\'', '\\\'', $s_email);
-	$s_number = str_replace('\'', '\\\'', $s_number);
+	$s_phone = str_replace('\'', '\\\'', $s_phone);
 	$s_address  = str_replace('\'', '\\\'', $s_address);
 	
 
-	
-	$sql = "insert into user (fullname, email, password, number, address) value ('$s_fullname', '$s_email', '$s_password' , '$s_number' ,'$s_address');";
+	register($s_fullname,$s_password,$s_email,$s_phone,$s_address);
 	
 
 	// echo $sql;
 
-	execute($sql);
+	
 
-	header('Location: index.php');
+	header('Location: login.php');
 	die();
 }
 
@@ -100,7 +99,7 @@ if (!empty($_POST)) {
 					  <input type="text" class="form-control" id="address" name="address">
 					</div>
 					<button class="btn btn-success">Đăng ký</button>
-					<a href="index.php"> <button class="btn btn-danger" type="button"> Back </button> </a>
+					<a href="login.php"> <button class="btn btn-danger" type="button"> Back </button> </a>
 				</form>
 			</div>
 		</div>

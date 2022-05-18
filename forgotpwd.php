@@ -89,7 +89,7 @@ try {
   
  
   <button type="submit" name="guiyeucau" value="đã gửi" class="btn btn-primary">Gửi yêu cầu</button>
-  <a href="index.php"> <button class="btn btn-danger" type="button"> Back </button> </a>
+  <a href="login.php"> <button class="btn btn-danger" type="button"> Quay lại </button> </a>
 </form>
     
 

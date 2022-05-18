@@ -21,9 +21,6 @@ if($data != null){
 
   $sql = "UPDATE user SET `password` = '".$password."' WHERE token = '".$token."' ";
   
-
-
-
   echo "<script> document.location = 'home.php' </script>";
 }
 
