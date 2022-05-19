@@ -6,7 +6,9 @@
     height: 0;
   }
 
-
+.col-md-4.thanhtoan .form-check{
+    margin: 11px;
+  }
   
   .arrow-steps .step {
     font-size: 14px;
@@ -110,3 +112,5 @@
   .arrow-steps .step.done:after {
     border-left: 17px solid #2f69aa;
   }
+
+  
