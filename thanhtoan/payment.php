@@ -35,10 +35,9 @@ if (isset($_POST['thanhtoan'])) {
   <form action="delivering.php" method="POST">
     <div class="row">
       <div class="col-md-6">
-
-        <style type="text/css">
-
-        </style>
+<!-- 
+Nhập thông tin đơn hàng -->
+      
         <h4>Thông tin đơn hàng</h4>
 
         <div class="form-group">
@@ -67,6 +66,9 @@ if (isset($_POST['thanhtoan'])) {
         </style>
 
         <div class="thanhtoan">
+
+<!-- Click nút thanh toán để hoàn thành -->
+        
           <h4>Phương thức thanh toán</h4>
           <div class="form-check">
             <input class="form-check-input" type="radio" name="flexRadioDefault" id="cash" value="   mat" checked>
@@ -97,6 +99,8 @@ if (isset($_POST['thanhtoan'])) {
         </div>
       </div>
       <div class="col-md-1"></div>
+
+<!-- Hiện thông tin các quyển sách sẽ mua và tổng tiền -->
 
       <div class="col-md-5 ">
         <h4>Sản phẩm</h4>

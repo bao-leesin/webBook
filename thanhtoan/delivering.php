@@ -24,6 +24,9 @@ $list = getList_shipping($account_id);
   
   <div class="row">
     <div class="col-md-12">
+
+<!-- Hiện thông tin đơn hàng đã lưu ở trang Thanh Toán -->
+
     <h4>Thông tin đơn hàng</h4>
     <ul>
         <li>Họ và tên người nhận : <b> <?php echo $fullname ?></b></li>
@@ -44,6 +47,9 @@ $list = getList_shipping($account_id);
             border: 1px solid #999;
           }
         </style>
+
+<!-- Lại hiện thông tin sản phẩm   -->
+
         <h4>Sản phẩm</h4>
         <table style="width: 100%; text-align: center; border-collapse: collapse;">
           <tr>

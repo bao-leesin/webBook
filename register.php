@@ -35,7 +35,7 @@ if (!empty($_POST)) {
 	$s_address  = str_replace('\'', '\\\'', $s_address);
 	
 
-	// register($s_username,$s_password,$s_email,$s_phone,$s_address);
+	register($s_username,$s_password,$s_email,$s_phone,$s_address);
 	
 
 	// echo $sql;
