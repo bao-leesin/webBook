@@ -1,7 +1,15 @@
+<?php
+require_once('../dbhelper.php');
+$_SESSION['account_id'] = $account_id; 
+$list = getList_shipping($account_id);
+
+
+?>
+
+
 <head>
     <link rel="stylesheet" href="../css/pay.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
 </head>
 
 <div class="container">
@@ -12,16 +20,78 @@
     <div class="step"> <span><a href="finished.php" >Đã hoàn thành</a><span> </div>
   </div>
 
+  <div class="mt-3"></div>
+  
   <div class="row">
     <div class="col-md-12">
+    <h4>Thông tin đơn hàng</h4>
     <ul>
-        <li>Họ và tên người nhận : <b> </b></li>
-        <li>Số điện thoại : <b> </b></li>
-        <li>Địa chỉ : <b></b> </li>
-        <li>Ghi chú : </li>
+        <li>Họ và tên người nhận : <b> <?php echo $fullname ?></b></li>
+        <li>Số điện thoại : <b> <?php echo $phone ?> </b></li>
+        <li>Địa chỉ : <b> <?php echo $address ?> </b> </li>
+        <li>Ghi chú : <b> <?php echo $note ?></b></li>
       </ul>
-        </div>
-      </form>
+      </div>
+      
+      <style type="text/css">
+          table,
+          th {
+            border-collapse: separate;
+            border: 1px solid #999;
+          }
+          td {
+            border-collapse: separate;
+            border: 1px solid #999;
+          }
+        </style>
+        <h4>Sản phẩm</h4>
+        <table style="width: 100%; text-align: center; border-collapse: collapse;">
+          <tr>
+            <th>Số thứ tự</th>
+            <th>Tên sản phẩm</th>
+            <th>Hình ảnh</th>
+            <th>Số lượng</th>
+            <th>Giá sản phẩm</th>
+            <th>Tổng tiền thanh toán</th>
+          </tr>
+          
+          <?php
+          if(isset($_SESSION['cart'])){
+            $i=0;
+            $tong_tien = 0;
+            foreach($_SESSION['cart'] as $cart_item ){
+              
+              $thanh_tien = $so_luong * $gia;
+              $tong_tien += $thanh_tien;
+              $i++;
+       
+          ?>
+          <tr>
+            <td><?php $i ?></td>
+            <td><?php echo $ten_san_pham = "tên sản phẩm" ?></td>
+            <td><?php echo $hinh_anh = "tên sản phẩm" ?></td>
+            <td><?php echo $so_luong = "tên sản phẩm" ?></td>
+            <td><?php echo  number_format($gia,0,',','.')  .' vnđ' ?></td>          
+            <td><?php echo  number_format($thanh_tien,0,',','.')  .' vnđ'  ?></td>
+          </tr>
+          <?php
+            }
+            ?>
+          <tr>
+            <td colspan="8">
+              <p> Tổng tiền:   <?php   echo  number_format($tong_tien,0,',','.')  .' vnđ' ?> </p>
+
+            <?php
+            }
+            ?>
+            </td>
+            
+          </tr> 
+           
+
+
+        </table>
+
     </div>
 
   </div>

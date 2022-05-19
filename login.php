@@ -1,9 +1,9 @@
 <?php
 require_once ('dbhelper.php');
+
 $s_username = $s_password = '';
 
 if (!empty($_GET)) {
-	$s_id = '';
 
 	if (isset($_GET['username'])) {
 		$s_username = $_GET['username'];
@@ -12,9 +12,10 @@ if (!empty($_GET)) {
 	if (isset($_GET['password'])) {
 		$s_password = $_GET['password'];
 	}
-
+    $s_username = $_SESSION['account_id'];
     $s_username = str_replace('\'', '\\\'', $s_username);
 	$s_password      = str_replace('\'', '\\\'', $s_password);
+
 
     $data = login($s_username,$s_password);
 

@@ -1,6 +1,4 @@
 
-
-
 .clearfix:after {
     clear: both;
     content: "";
@@ -8,10 +6,6 @@
     height: 0;
   }
 
-  .col-md-8 .thanhtoan .form-check{
-    margin: 11px;
-  }
-  
   .arrow-steps .step {
     font-size: 14px;
     text-align: center;
