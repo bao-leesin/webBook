@@ -8,7 +8,7 @@ require_once('../dbhelper.php');
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-<div class="container p-5 my-5 bg-primary text-white"></div>
+
 <div class="container">
   
   <div class="arrow-steps clearfix">
@@ -17,25 +17,40 @@ require_once('../dbhelper.php');
     <div class="step"> <span><a href="finished.php">Đã hoàn thành</a><span> </div>
   </div>
 
+<div class="mt-3"></div>
 
-
-
-<form action="" method="POST">
-
+<form action="delivering.php" method="POST">
   <div class="row">
     <div class="col-md-8">
       <h4>Thông tin đơn hàng</h4>
-      <ul>
-        <li>Họ và tên người nhận : <b> </b></li>
-        <li>Số điện thoại : <b> </b></li>
-        <li>Địa chỉ : <b></b> </li>
-        <li>Ghi chú : </li>
-      </ul>
+
+        <div class="form-group">
+          <label for="fullname"> Họ và tên </label>
+          <input type="text"    class="form-control"   id="fullname" name="fullname"  >
+        </div>
+        <div class="form-group">
+          <label for="phone"> Số điện thoại </label>
+          <input type="text" class="form-control" id="phone" name="phone" >
+        </div>
+        <div class="form-group">
+          <label for="address"> Địa chỉ </label>
+         <input type="text" class="form-control" id="address" name="address">
+        </div>
+        <div class="form-group">
+          <label for="detail"> Ghi chú </label>
+          <input type="text" class="form-control" id="detail" name="detail" >
+        </div>
     </div>
 
-  
+<div class="mt-3"></div>
 
-    <div class="col-md-4 thanhtoan">
+<style type="text/css">
+  .thanhtoan .form-check{
+    margin: 11px;
+  }
+</style>
+
+    <div class="thanhtoan">
       <h4>Phương thức thanh toán</h4>
       <div class="form-check">
         <input class="form-check-input" type="radio" name="flexRadioDefault" id="cash" value="   mat" checked>

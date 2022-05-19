@@ -1,13 +1,13 @@
 <?php
 require_once ('dbhelper.php');
 
-$s_fullname = $s_password = $s_email = $s_phone = $s_address = '';
+$s_username = $s_password = $s_email = $s_phone = $s_address = '';
 
 if (!empty($_POST)) {
 	$s_id = '';
 
-	if (isset($_POST['fullname'])) {
-		$s_fullname = $_POST['fullname'];
+	if (isset($_POST['username'])) {
+		$s_fullname = $_POST['username'];
 	}
 
 	if (isset($_POST['email'])) {
@@ -18,8 +18,8 @@ if (!empty($_POST)) {
 		$s_password = $_POST['password'];
 	}
 
-	if (isset($_POST['number'])) {
-		$s_phone = $_POST['number'];
+	if (isset($_POST['phone'])) {
+		$s_phone = $_POST['phone'];
 	}
 
 	if (isset($_POST['address'])) {
@@ -28,14 +28,14 @@ if (!empty($_POST)) {
 
 	
 
-	$s_fullname = str_replace('\'', '\\\'', $s_fullname);
+	$s_username = str_replace('\'', '\\\'', $s_username);
 	$s_password      = str_replace('\'', '\\\'', $s_password);
 	$s_email = str_replace('\'', '\\\'', $s_email);
 	$s_phone = str_replace('\'', '\\\'', $s_phone);
 	$s_address  = str_replace('\'', '\\\'', $s_address);
 	
 
-	register($s_fullname,$s_password,$s_email,$s_phone,$s_address);
+	// register($s_username,$s_password,$s_email,$s_phone,$s_address);
 	
 
 	// echo $sql;
@@ -53,50 +53,52 @@ if (!empty($_POST)) {
 <html>
 <head>
 	<title>Tạo tài khoản</title>
-	<!-- Latest compiled and minified CSS -->
+	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
-	<!-- jQuery library -->
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-	<!-- Popper JS -->
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
-	<!-- Latest compiled JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+	
 </head>
 <body>
 	<div class="container">
 		<div class="panel panel-primary">
+
 			<div class="panel-heading">
 				<h2 class="text-center"> Form đăng ký </h2>
 			</div>
+
 			<div class="panel-body">
 				<form method="post">
 
 					<div class="form-group">
-					  <label for="fullname">Tên đăng nhập:</label>
-					  <input required="true" type="text" class="form-control" id="fullname" name="fullname" >
+					  <label for="username">Tên đăng nhập:</label>
+					  <input required="true" type="text" class="form-control" id="username" name="username" >
 					</div>
 
 					<div class="form-group">
 						<label for="email">Email:</label>
-						<input type="email" class="form-control" name="email" id="email" >
+						<input required="true" type="email" class="form-control" name="email" id="email" >
 					</div>
 
 					<div class="form-group">
 					  <label for="password">Mật khẩu:</label>
-					  <input type="password" class="form-control" name="password" id="password">
+					  <input required="true" type="password" class="form-control" name="password" id="password">
 					</div>
 
 					<div class="form-group">
-					  <label for="number">Số điện thoại:</label>
-					  <input type="number" class="form-control" id="number" name="number" >
+					  <label for="phone">Số điện thoại:</label>
+					  <input required="true" type="text" class="form-control" id="phone" name="phone" >
 					</div>
 					
 					<div class="form-group">
 					  <label for="address">Địa chỉ:</label>
-					  <input type="text" class="form-control" id="address" name="address">
+					  <input required="true" type="text" class="form-control" id="address" name="address">
 					</div>
 					<button class="btn btn-success">Đăng ký</button>
 					<a href="login.php"> <button class="btn btn-danger" type="button"> Back </button> </a>
@@ -105,4 +107,5 @@ if (!empty($_POST)) {
 		</div>
 	</div>
 </body>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </html>
