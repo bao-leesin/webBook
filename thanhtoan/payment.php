@@ -9,7 +9,6 @@ if (isset($_POST['thanhtoan'])) {
 
   $account_id = $_SESSION['account_id'];
 
-
   insert_shippingTable($fullname,$phone,$address,$note,$account_id);
 }
 
@@ -127,40 +126,21 @@ Nhập thông tin đơn hàng -->
             <th>Tổng tiền thanh toán</th>
           </tr>
           
-          <?php
-          if(isset($_SESSION['cart'])){
-            $i=0;
-            $tong_tien = 0;
-            foreach($_SESSION['cart'] as $cart_item ){
+         <?php
+         $gia = 5;
+         $so_luong = 2;
+         $thanh_tien = $gia * $so_luong;
+         ?>
 
-              $thanh_tien = $so_luong * $gia;
-              $tong_tien += $thanh_tien;
-              $i++;
-       
-          ?>
           <tr>
-            <td><?php $i ?></td>
+            
             <td><?php echo $ten_san_pham = "tên sản phẩm" ?></td>
             <td><?php echo $hinh_anh = "tên sản phẩm" ?></td>
-            <td><?php echo $so_luong = "tên sản phẩm" ?></td>
+            <td><?php echo number_format($so_luong,0,',','.')  ?></td>
             <td><?php echo  number_format($gia,0,',','.')  .' vnđ' ?></td>          
             <td><?php echo  number_format($thanh_tien,0,',','.')  .' vnđ'  ?></td>
           </tr>
-          <?php
-            }
-            ?>
-          <tr>
-            <td colspan="8">
-              <p> Tổng tiền:   <?php   echo  number_format($tong_tien,0,',','.')  .' vnđ' ?> </p>
-
-            <?php
-            }
-            ?>
-            </td>
-            
-          </tr> 
-           
-
+        
 
         </table>
       </div>
