@@ -1,7 +1,7 @@
 <?php
 require_once('../dbhelper.php');
-
-$list = getList_shipping();
+$_SESSION['account_id'] = $account_id; 
+$list = getList_shipping($account_id);
 $data = getCart();
 
 

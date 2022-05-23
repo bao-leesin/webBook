@@ -83,7 +83,7 @@
   
   .arrow-steps .step.current {
     color: #fff;
-    background-color: #5599e5;
+    background-color: #f88fd9;
   }
   
   .arrow-steps .step.current a {
@@ -92,12 +92,12 @@
   }
   
   .arrow-steps .step.current:after {
-    border-left: 17px solid #5599e5;
+    border-left: 17px solid #f88fd9;
   }
   
   .arrow-steps .step.done {
     color: #173352;
-    background-color: #2f69aa;
+    background-color: #eb27b0;
   }
   
   .arrow-steps .step.done a {
@@ -106,7 +106,7 @@
   }
   
   .arrow-steps .step.done:after {
-    border-left: 17px solid #2f69aa;
+    border-left: 17px solid #ebdf36;
   }
 
   

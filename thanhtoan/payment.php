@@ -10,6 +10,7 @@ if (isset($_POST['thanhtoan'])) {
   $account_id = $_SESSION['account_id'];
 
   insert_shippingTable($fullname,$phone,$address,$note,$account_id);
+  $data = getCart();
 }
 
 
@@ -126,11 +127,6 @@ Nhập thông tin đơn hàng -->
             <th>Tổng tiền thanh toán</th>
           </tr>
           
-         <?php
-         $gia = 5;
-         $so_luong = 2;
-         $thanh_tien = $gia * $so_luong;
-         ?>
 
           <tr>
             
